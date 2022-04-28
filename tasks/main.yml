@@ -2,17 +2,17 @@
 - name: Install yum-utils
   yum:
     name: yum-utils
-    state: latets
+    state: latest
 
 - name: Install device-mapper-persistent-data
   yum:
     name: device-mapper-persistent-data
-    state: latets
+    state: latest
 
 - name: Install lvm2
   yum:
     name: lvm2
-    state: latets
+    state: latest
 
 - name: Add docker repo
   get_url:
@@ -22,7 +22,7 @@
 - name: Install docker
   yum:
     name: docker-ce
-    state: latets
+    state: latest
 
 - name: Start docker service
   service:
