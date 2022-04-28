@@ -1,0 +1,31 @@
+---
+- name: Install yum-utils
+  yum:
+    name: yum-utils
+    state: latets
+
+- name: Install device-mapper-persistent-data
+  yum:
+    name: device-mapper-persistent-data
+    state: latets
+
+- name: Install lvm2
+  yum:
+    name: lvm2
+    state: latets
+
+- name: Add docker repo
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+
+- name: Install docker
+  yum:
+    name: docker-ce
+    state: latets
+
+- name: Start docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
